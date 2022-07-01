@@ -9,20 +9,61 @@ class WelcomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        children: [
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
           Image.asset('assets/images/bg-login.png'),
-          Image.asset('assets/images/logo.png'),
-          ElevatedButton(
-            onPressed: () {},
-            child: Text('Login'),
+          SizedBox(
+            width: MediaQuery.of(context).size.width / 2,
+            child: Image.asset('assets/images/logo.png'),
           ),
-          ElevatedButton(
-            onPressed: () {},
-            child: Text('Register'),
+          SizedBox(
+            height: 25,
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 16,
+              vertical: 8,
+            ),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.black,
+                minimumSize: Size.fromHeight(50),
+                side: BorderSide(color: Colors.black),
+              ),
+              onPressed: () {},
+              child: Text(
+                'Login',
+                style: TextStyle(fontSize: 16, color: Colors.white),
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 16,
+              vertical: 8,
+            ),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.white,
+                minimumSize: Size.fromHeight(50),
+                side: BorderSide(color: Colors.black),
+              ),
+              onPressed: () {},
+              child: Text(
+                'Register',
+                style: TextStyle(fontSize: 16, color: Colors.black),
+              ),
+            ),
           ),
           TextButton(
             onPressed: () {},
-            child: Text('Continue as a guest'),
+            child: Text(
+              'Continue as a guest',
+              style: TextStyle(
+                fontSize: 16,
+                decoration: TextDecoration.underline,
+              ),
+            ),
           ),
         ],
       ),
