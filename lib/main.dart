@@ -1,3 +1,4 @@
+import 'package:arya_prayoga_uas_mobile_programming/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,14 +16,8 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.green,
       ),
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Tes judul'),
-        ),
-        body: const Center(
-          child: Text('Tes isi'),
-        ),
-      ),
+      // ignore: prefer_const_constructors
+      home: WelcomePage(),
     );
   }
 }
