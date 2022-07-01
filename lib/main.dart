@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'UAS Mobile Programming oleh Arya Prayoga 19.0504.0002',
       theme: ThemeData(
         primaryColor: Colors.green,
+        primarySwatch: Colors.green,
       ),
       debugShowCheckedModeBanner: false,
       // ignore: prefer_const_constructors

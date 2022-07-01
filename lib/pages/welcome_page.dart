@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:arya_prayoga_uas_mobile_programming/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -30,7 +31,16 @@ class WelcomePage extends StatelessWidget {
                 minimumSize: Size.fromHeight(50),
                 side: BorderSide(color: Colors.black),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return LoginPage();
+                    },
+                  ),
+                );
+              },
               child: Text(
                 'Login',
                 style: TextStyle(fontSize: 16, color: Colors.white),
@@ -61,6 +71,7 @@ class WelcomePage extends StatelessWidget {
               'Continue as a guest',
               style: TextStyle(
                 fontSize: 16,
+                color: Colors.blue,
                 decoration: TextDecoration.underline,
               ),
             ),
