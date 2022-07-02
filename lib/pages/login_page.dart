@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:arya_prayoga_uas_mobile_programming/pages/main_page.dart';
 import 'package:arya_prayoga_uas_mobile_programming/pages/register_page.dart';
 import 'package:flutter/material.dart';
 
@@ -78,7 +79,16 @@ class LoginPage extends StatelessWidget {
                   minimumSize: Size.fromHeight(50),
                   side: BorderSide(color: Colors.black),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return MainPage();
+                      },
+                    ),
+                  );
+                },
                 child: Text(
                   'Login',
                   style: TextStyle(fontSize: 16, color: Colors.white),

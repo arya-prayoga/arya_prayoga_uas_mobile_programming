@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:arya_prayoga_uas_mobile_programming/pages/login_page.dart';
+import 'package:arya_prayoga_uas_mobile_programming/pages/main_page.dart';
 import 'package:arya_prayoga_uas_mobile_programming/pages/register_page.dart';
 import 'package:flutter/material.dart';
 
@@ -76,7 +77,16 @@ class WelcomePage extends StatelessWidget {
             ),
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return MainPage();
+                  },
+                ),
+              );
+            },
             child: Text(
               'Continue as a guest',
               style: TextStyle(
