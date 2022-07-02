@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors_in_immutables, use_key_in_widget_constructors, prefer_const_constructors
 
 import 'package:arya_prayoga_uas_mobile_programming/models/product.dart';
+import 'package:arya_prayoga_uas_mobile_programming/pages/detail_page.dart';
 import 'package:flutter/material.dart';
 
 class ProductCard extends StatelessWidget {
@@ -13,7 +14,14 @@ class ProductCard extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailPage(product),
+            ),
+          );
+        },
         child: Row(
           children: [
             Image.network(
