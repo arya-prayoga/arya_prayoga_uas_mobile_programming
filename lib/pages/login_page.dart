@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:arya_prayoga_uas_mobile_programming/pages/register_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -113,60 +114,63 @@ class LoginPage extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            Row(
-              children: <Widget>[
-                Expanded(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.white,
-                        minimumSize: const Size.fromHeight(50),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                          side: BorderSide(color: Colors.grey),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.white,
+                          minimumSize: const Size.fromHeight(50),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                            side: BorderSide(color: Colors.grey),
+                          ),
                         ),
+                        onPressed: () {},
+                        child: Image.asset('assets/images/facebook_logo.png'),
                       ),
-                      onPressed: () {},
-                      child: Image.asset('assets/images/facebook_logo.png'),
                     ),
                   ),
-                ),
-                Expanded(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.white,
-                        minimumSize: const Size.fromHeight(50),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                          side: BorderSide(color: Colors.grey),
+                  Expanded(
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.white,
+                          minimumSize: const Size.fromHeight(50),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                            side: BorderSide(color: Colors.grey),
+                          ),
                         ),
+                        onPressed: () {},
+                        child: Image.asset('assets/images/google_logo.png'),
                       ),
-                      onPressed: () {},
-                      child: Image.asset('assets/images/google_logo.png'),
                     ),
                   ),
-                ),
-                Expanded(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.white,
-                        minimumSize: const Size.fromHeight(50),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                          side: BorderSide(color: Colors.grey),
+                  Expanded(
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.white,
+                          minimumSize: const Size.fromHeight(50),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                            side: BorderSide(color: Colors.grey),
+                          ),
                         ),
+                        onPressed: () {},
+                        child: Image.asset('assets/images/apple_logo.png'),
                       ),
-                      onPressed: () {},
-                      child: Image.asset('assets/images/apple_logo.png'),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             Spacer(),
             Row(
@@ -174,7 +178,16 @@ class LoginPage extends StatelessWidget {
               children: <Widget>[
                 Text("Don't have an account?"),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return RegisterPage();
+                        },
+                      ),
+                    );
+                  },
                   child: Text(
                     'Register Now',
                     style: TextStyle(

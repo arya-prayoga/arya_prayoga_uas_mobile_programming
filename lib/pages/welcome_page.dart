@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:arya_prayoga_uas_mobile_programming/pages/login_page.dart';
+import 'package:arya_prayoga_uas_mobile_programming/pages/register_page.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -58,7 +59,16 @@ class WelcomePage extends StatelessWidget {
                 minimumSize: Size.fromHeight(50),
                 side: BorderSide(color: Colors.black),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return RegisterPage();
+                    },
+                  ),
+                );
+              },
               child: Text(
                 'Register',
                 style: TextStyle(fontSize: 16, color: Colors.black),
