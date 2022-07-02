@@ -34,14 +34,14 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 50,
+              height: 30,
             ),
             SizedBox(
               width: MediaQuery.of(context).size.width / 2,
               child: Image.asset('assets/images/logo.png'),
             ),
             SizedBox(
-              height: 25,
+              height: 15,
             ),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -195,10 +195,10 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 50,
-                ),
               ],
+            ),
+            SizedBox(
+              height: 10,
             ),
           ],
         ),
