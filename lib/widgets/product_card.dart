@@ -11,40 +11,44 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-      child: InkWell(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => DetailPage(product),
-            ),
-          );
-        },
-        child: Row(
-          children: [
-            Image.network(
-              product.thumbnail,
-              width: 100,
-              height: 100,
-              fit: BoxFit.cover,
-            ),
-            SizedBox(
-              width: 20,
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(product.title),
-                Text(product.brand),
-                Text(product.rating.toString()),
-                Text(product.price.toString()),
-              ],
-            ),
-          ],
+    if (product.category == 'laptops') {
+      return Container(
+        padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+        child: InkWell(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailPage(product),
+              ),
+            );
+          },
+          child: Row(
+            children: [
+              Image.network(
+                product.thumbnail,
+                width: 100,
+                height: 100,
+                fit: BoxFit.cover,
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(product.title),
+                  Text(product.brand),
+                  Text(product.rating.toString()),
+                  Text(product.price.toString()),
+                ],
+              ),
+            ],
+          ),
         ),
-      ),
-    );
+      );
+    } else {
+      return SizedBox();
+    }
   }
 }
