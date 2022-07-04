@@ -2,6 +2,7 @@
 
 import 'package:arya_prayoga_uas_mobile_programming/models/product.dart';
 import 'package:arya_prayoga_uas_mobile_programming/providers/product_provider.dart';
+import 'package:arya_prayoga_uas_mobile_programming/widgets/back_button.dart';
 import 'package:arya_prayoga_uas_mobile_programming/widgets/product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -14,25 +15,34 @@ class MainPage extends StatelessWidget {
     var productProvider = Provider.of<ProductProvider>(context);
     return Scaffold(
       body: SafeArea(
-        child: FutureBuilder(
-          future: productProvider.getRecommendedProduct(),
-          builder: (context, AsyncSnapshot snapshot) {
-            if (snapshot.hasData) {
-              List<Product> data = snapshot.data;
-              return GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                ),
-                itemCount: snapshot.data.length,
-                itemBuilder: (context, index) {
-                  return ProductCard(data[index]);
-                },
-              );
-            }
-            return Center(
-              child: CircularProgressIndicator(),
-            );
-          },
+        child: ListView(
+          shrinkWrap: true,
+          physics: ScrollPhysics(),
+          children: <Widget>[
+            MyBackButton(),
+            FutureBuilder(
+              future: productProvider.getRecommendedProduct(),
+              builder: (context, AsyncSnapshot snapshot) {
+                if (snapshot.hasData) {
+                  List<Product> data = snapshot.data;
+                  return GridView.builder(
+                    shrinkWrap: true,
+                    physics: ScrollPhysics(),
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                    ),
+                    itemCount: snapshot.data.length,
+                    itemBuilder: (context, index) {
+                      return ProductCard(data[index]);
+                    },
+                  );
+                }
+                return Center(
+                  child: CircularProgressIndicator(),
+                );
+              },
+            ),
+          ],
         ),
       ),
     );
