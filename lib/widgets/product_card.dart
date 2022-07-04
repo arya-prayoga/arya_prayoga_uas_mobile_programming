@@ -22,7 +22,7 @@ class ProductCard extends StatelessWidget {
             ),
           );
         },
-        child: Row(
+        child: Column(
           children: [
             Image.network(
               product.thumbnail,
@@ -30,18 +30,17 @@ class ProductCard extends StatelessWidget {
               height: 100,
               fit: BoxFit.cover,
             ),
-            SizedBox(
-              width: 20,
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(product.title),
-                Text(product.brand),
-                Text(product.rating.toString()),
-                Text(product.price.toString()),
-              ],
-            ),
+            Container(
+              padding: EdgeInsets.only(top: 16),
+              child: Column(
+                children: [
+                  Text(product.title),
+                  Text(product.brand),
+                  Text(product.rating.toString()),
+                  Text(product.price.toString()),
+                ],
+              ),
+            )
           ],
         ),
       ),

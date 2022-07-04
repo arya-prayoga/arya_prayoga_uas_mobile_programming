@@ -14,28 +14,25 @@ class MainPage extends StatelessWidget {
     var productProvider = Provider.of<ProductProvider>(context);
     return Scaffold(
       body: SafeArea(
-        child: ListView(
-          // ignore: prefer_const_literals_to_create_immutables
-          children: <Widget>[
-            FutureBuilder(
-              future: productProvider.getRecommendedProduct(),
-              builder: (context, AsyncSnapshot snapshot) {
-                if (snapshot.hasData) {
-                  List<Product> data = snapshot.data;
-                  return Column(
-                    children: data.map(
-                      (item) {
-                        return ProductCard(item);
-                      },
-                    ).toList(),
-                  );
-                }
-                return Center(
-                  child: CircularProgressIndicator(),
-                );
-              },
-            ),
-          ],
+        child: FutureBuilder(
+          future: productProvider.getRecommendedProduct(),
+          builder: (context, AsyncSnapshot snapshot) {
+            if (snapshot.hasData) {
+              List<Product> data = snapshot.data;
+              return GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                ),
+                itemCount: snapshot.data.length,
+                itemBuilder: (context, index) {
+                  return ProductCard(data[index]);
+                },
+              );
+            }
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          },
         ),
       ),
     );
