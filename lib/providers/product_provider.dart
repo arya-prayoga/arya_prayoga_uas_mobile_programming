@@ -5,7 +5,8 @@ import 'package:http/http.dart' as http;
 
 class ProductProvider extends ChangeNotifier {
   getRecommendedProduct() async {
-    var result = await http.get(Uri.parse('https://dummyjson.com/products'));
+    var result = await http
+        .get(Uri.parse('https://dummyjson.com/products?skip=5&limit=5'));
     // print(result.statusCode);
     // print(result.body);
     if (result.statusCode == 200) {
