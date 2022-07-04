@@ -15,6 +15,15 @@ class DetailPage extends StatelessWidget {
           children: <Widget>[
             Image.network(product.thumbnail),
             Text(product.title),
+            Container(
+              height: 100,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: product.images.map((item) {
+                  return Image.network(item);
+                }).toList(),
+              ),
+            ),
             Text(product.description),
           ],
         ),
