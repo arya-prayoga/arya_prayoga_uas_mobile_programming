@@ -14,85 +14,86 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
-        child: Container(
-          padding: EdgeInsets.only(top: 8),
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            // color: Colors.green,
-            border: Border.all(color: Colors.green, width: 5),
-            borderRadius: BorderRadius.circular(25),
-          ),
-          child: InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => DetailPage(product),
-                ),
-              );
-            },
-            child: Column(
-              children: [
-                Stack(
-                  children: [
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 8),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: Image.network(
-                          product.thumbnail,
-                          width: double.infinity,
-                          height: 100,
-                          fit: BoxFit.cover,
+      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+      child: Container(
+        padding: EdgeInsets.only(top: 8),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          // color: Colors.green,
+          border: Border.all(color: Colors.green, width: 5),
+          borderRadius: BorderRadius.circular(25),
+        ),
+        child: InkWell(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailPage(product),
+              ),
+            );
+          },
+          child: Column(
+            children: [
+              Stack(
+                children: [
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 8),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image.network(
+                        product.thumbnail,
+                        width: double.infinity,
+                        height: 100,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 8),
+                    alignment: Alignment.topRight,
+                    child: Container(
+                      alignment: Alignment.center,
+                      width: 75,
+                      height: 30,
+                      decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(20),
+                          topRight: Radius.circular(20),
+                        ),
+                      ),
+                      child: Text.rich(
+                        TextSpan(
+                          text: '- ${product.discountPercentage} %',
+                          style: TextStyle(color: Colors.white),
                         ),
                       ),
                     ),
+                  ),
+                ],
+              ),
+              Container(
+                padding: EdgeInsets.only(top: 16),
+                child: Column(
+                  children: [
+                    Text(product.title),
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 8),
-                      alignment: Alignment.topRight,
-                      child: Container(
-                        alignment: Alignment.center,
-                        width: 75,
-                        height: 30,
-                        decoration: BoxDecoration(
-                          color: Colors.green,
-                          borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(20),
-                            topRight: Radius.circular(20),
-                          ),
-                        ),
-                        child: Text.rich(
-                          TextSpan(
-                            text: '- ${product.discountPercentage} %',
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ),
+                      padding: EdgeInsets.symmetric(vertical: 8),
+                      child: RatingStars(
+                        value: product.rating,
+                        valueLabelVisibility: false,
                       ),
+                    ),
+                    Text.rich(
+                      TextSpan(text: '\$ ${product.price}'),
                     ),
                   ],
                 ),
-                Container(
-                  padding: EdgeInsets.only(top: 16),
-                  child: Column(
-                    children: [
-                      Text(product.title),
-                      Container(
-                        padding: EdgeInsets.symmetric(vertical: 8),
-                        child: RatingStars(
-                          value: product.rating,
-                          valueLabelVisibility: false,
-                        ),
-                      ),
-                      Text.rich(
-                        TextSpan(text: '\$ ${product.price}'),
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            ),
+              )
+            ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
