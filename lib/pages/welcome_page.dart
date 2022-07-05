@@ -78,7 +78,7 @@ class WelcomePage extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
-              Navigator.push(
+              Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
                   builder: (context) {

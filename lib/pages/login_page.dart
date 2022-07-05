@@ -63,7 +63,7 @@ class LoginPage extends StatelessWidget {
                   side: BorderSide(color: Colors.black),
                 ),
                 onPressed: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                       builder: (context) {
