@@ -2,6 +2,7 @@
 
 import 'package:arya_prayoga_uas_mobile_programming/models/product.dart';
 import 'package:arya_prayoga_uas_mobile_programming/pages/detail_page.dart';
+import 'package:arya_prayoga_uas_mobile_programming/style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
@@ -19,7 +20,6 @@ class ProductCard extends StatelessWidget {
         padding: EdgeInsets.only(top: 8),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          // color: Colors.green,
           border: Border.all(color: Colors.green, width: 5),
           borderRadius: BorderRadius.circular(25),
         ),
@@ -65,7 +65,7 @@ class ProductCard extends StatelessWidget {
                       child: Text.rich(
                         TextSpan(
                           text: '- ${product.discountPercentage} %',
-                          style: TextStyle(color: Colors.white),
+                          style: whiteTextStyle,
                         ),
                       ),
                     ),
@@ -76,7 +76,10 @@ class ProductCard extends StatelessWidget {
                 padding: EdgeInsets.only(top: 16),
                 child: Column(
                   children: [
-                    Text(product.title),
+                    Text(
+                      product.title,
+                      style: regularTextStyle,
+                    ),
                     Container(
                       padding: EdgeInsets.symmetric(vertical: 8),
                       child: RatingStars(
@@ -85,7 +88,10 @@ class ProductCard extends StatelessWidget {
                       ),
                     ),
                     Text.rich(
-                      TextSpan(text: '\$ ${product.price}'),
+                      TextSpan(
+                        text: '\$ ${product.price}',
+                        style: regularTextStyle,
+                      ),
                     ),
                   ],
                 ),

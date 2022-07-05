@@ -2,6 +2,7 @@
 
 import 'package:arya_prayoga_uas_mobile_programming/pages/main_page.dart';
 import 'package:arya_prayoga_uas_mobile_programming/pages/register_page.dart';
+import 'package:arya_prayoga_uas_mobile_programming/style.dart';
 import 'package:arya_prayoga_uas_mobile_programming/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 
@@ -49,7 +50,10 @@ class LoginPage extends StatelessWidget {
             Container(
               alignment: Alignment.centerRight,
               padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              child: Text('Forgot Password?'),
+              child: Text(
+                'Forgot Password?',
+                style: regularTextStyle,
+              ),
             ),
             SizedBox(
               height: 15,
@@ -74,7 +78,7 @@ class LoginPage extends StatelessWidget {
                 },
                 child: Text(
                   'Login',
-                  style: TextStyle(fontSize: 16, color: Colors.white),
+                  style: whiteTextStyle,
                 ),
               ),
             ),
@@ -92,7 +96,10 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                Text('Or Login with'),
+                Text(
+                  'Or Login with',
+                  style: regularTextStyle,
+                ),
                 Expanded(
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -169,7 +176,10 @@ class LoginPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text("Don't have an account?"),
+                Text(
+                  "Don't have an account?",
+                  style: regularTextStyle,
+                ),
                 TextButton(
                   onPressed: () {
                     Navigator.push(
@@ -183,9 +193,7 @@ class LoginPage extends StatelessWidget {
                   },
                   child: Text(
                     'Register Now',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 5, 255, 205),
-                    ),
+                    style: linkTextStyle,
                   ),
                 ),
               ],

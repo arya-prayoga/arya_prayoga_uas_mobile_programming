@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_const_constructors_in_immutables, use_key_in_widget_constructors
 
 import 'package:arya_prayoga_uas_mobile_programming/models/product.dart';
+import 'package:arya_prayoga_uas_mobile_programming/style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
 
@@ -81,7 +82,10 @@ class DetailPage extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              Text(product.title),
+                              Text(
+                                product.title,
+                                style: regularTextStyle,
+                              ),
                               RatingStars(
                                 value: product.rating,
                                 valueLabelVisibility: true,
@@ -96,27 +100,44 @@ class DetailPage extends StatelessWidget {
                                   children: <Widget>[
                                     Column(
                                       children: <Widget>[
-                                        Text('Price'),
-                                        Text.rich(
-                                          TextSpan(text: '\$ ${product.price}'),
+                                        Text(
+                                          'Price',
+                                          style: regularTextStyle,
                                         ),
-                                      ],
-                                    ),
-                                    Column(
-                                      children: <Widget>[
-                                        Text('Stock'),
-                                        Text.rich(
-                                          TextSpan(text: '${product.stock}'),
-                                        ),
-                                      ],
-                                    ),
-                                    Column(
-                                      children: <Widget>[
-                                        Text('Discount'),
                                         Text.rich(
                                           TextSpan(
-                                              text:
-                                                  '${product.discountPercentage} %'),
+                                            text: '\$ ${product.price}',
+                                            style: regularTextStyle,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Column(
+                                      children: <Widget>[
+                                        Text(
+                                          'Stock',
+                                          style: regularTextStyle,
+                                        ),
+                                        Text.rich(
+                                          TextSpan(
+                                            text: '${product.stock}',
+                                            style: regularTextStyle,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Column(
+                                      children: <Widget>[
+                                        Text(
+                                          'Discount',
+                                          style: regularTextStyle,
+                                        ),
+                                        Text.rich(
+                                          TextSpan(
+                                            text:
+                                                '${product.discountPercentage} %',
+                                            style: regularTextStyle,
+                                          ),
                                         ),
                                       ],
                                     ),
@@ -131,15 +152,24 @@ class DetailPage extends StatelessWidget {
                     SizedBox(
                       height: 16,
                     ),
-                    Text('Discription'),
+                    Text(
+                      'Discription',
+                      style: blackTextStyle,
+                    ),
                     SizedBox(
                       height: 16,
                     ),
-                    Text(product.description),
+                    Text(
+                      product.description,
+                      style: regularTextStyle,
+                    ),
                     SizedBox(
                       height: 16,
                     ),
-                    Text('Images'),
+                    Text(
+                      'Images',
+                      style: blackTextStyle,
+                    ),
                     SizedBox(
                       height: 16,
                     ),
@@ -164,53 +194,6 @@ class DetailPage extends StatelessWidget {
                 ),
               ),
             ),
-            // Container(
-            //   padding: EdgeInsets.symmetric(horizontal: 32),
-            //   child: Row(
-            //     children: [
-            //       Container(
-            //         height: 100,
-            //         width: 100,
-            //         child: ClipRRect(
-            //           borderRadius: BorderRadius.circular(20),
-            //           child: Image.network(
-            //             product.thumbnail,
-            //             fit: BoxFit.cover,
-            //           ),
-            //         ),
-            //       ),
-            //       Container(
-            //         child: Column(
-            //           mainAxisAlignment: MainAxisAlignment.start,
-            //           children: [
-            //             Text.rich(
-            //               TextSpan(text: '\$ ${product.price}'),
-            //             ),
-            //           ],
-            //         ),
-            //       ),
-            //     ],
-            //   ),
-            // ),
-            // Container(
-            //   padding: EdgeInsets.symmetric(horizontal: 32),
-            //   child: Container(
-            //     color: Colors.white,
-            //     width: double.infinity,
-            //     height: 100,
-            //   ),
-            // ),
-            // Text(product.title),
-            // Container(
-            //   height: 100,
-            //   child: ListView(
-            //     scrollDirection: Axis.horizontal,
-            //     children: product.images.map((item) {
-            //       return Image.network(item);
-            //     }).toList(),
-            //   ),
-            // ),
-            // Text(product.description),
           ],
         ),
       ),

@@ -2,6 +2,7 @@
 
 import 'package:arya_prayoga_uas_mobile_programming/pages/login_page.dart';
 import 'package:arya_prayoga_uas_mobile_programming/pages/main_page.dart';
+import 'package:arya_prayoga_uas_mobile_programming/style.dart';
 import 'package:arya_prayoga_uas_mobile_programming/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 
@@ -86,7 +87,7 @@ class RegisterPage extends StatelessWidget {
                 },
                 child: Text(
                   'Register',
-                  style: TextStyle(fontSize: 16, color: Colors.white),
+                  style: whiteTextStyle,
                 ),
               ),
             ),
@@ -104,7 +105,10 @@ class RegisterPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                Text('Or Register with'),
+                Text(
+                  'Or Register with',
+                  style: regularTextStyle,
+                ),
                 Expanded(
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -178,7 +182,10 @@ class RegisterPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text("Already have an account?"),
+                Text(
+                  "Already have an account?",
+                  style: regularTextStyle,
+                ),
                 TextButton(
                   onPressed: () {
                     Navigator.push(
@@ -192,9 +199,7 @@ class RegisterPage extends StatelessWidget {
                   },
                   child: Text(
                     'Login Now',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 5, 255, 205),
-                    ),
+                    style: linkTextStyle,
                   ),
                 ),
               ],

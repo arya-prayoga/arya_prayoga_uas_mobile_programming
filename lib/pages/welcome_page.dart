@@ -3,6 +3,7 @@
 import 'package:arya_prayoga_uas_mobile_programming/pages/login_page.dart';
 import 'package:arya_prayoga_uas_mobile_programming/pages/main_page.dart';
 import 'package:arya_prayoga_uas_mobile_programming/pages/register_page.dart';
+import 'package:arya_prayoga_uas_mobile_programming/style.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -45,7 +46,7 @@ class WelcomePage extends StatelessWidget {
               },
               child: Text(
                 'Login',
-                style: TextStyle(fontSize: 16, color: Colors.white),
+                style: whiteTextStyle,
               ),
             ),
           ),
@@ -72,7 +73,7 @@ class WelcomePage extends StatelessWidget {
               },
               child: Text(
                 'Register',
-                style: TextStyle(fontSize: 16, color: Colors.black),
+                style: blackTextStyle,
               ),
             ),
           ),
@@ -89,11 +90,7 @@ class WelcomePage extends StatelessWidget {
             },
             child: Text(
               'Continue as a guest',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.blue,
-                decoration: TextDecoration.underline,
-              ),
+              style: blueTextStyle,
             ),
           ),
         ],
