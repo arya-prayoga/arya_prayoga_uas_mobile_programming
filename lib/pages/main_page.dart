@@ -76,8 +76,7 @@ class MainPage extends StatelessWidget {
                     shrinkWrap: true,
                     physics: ScrollPhysics(),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                    ),
+                        crossAxisCount: 2, childAspectRatio: 0.9),
                     itemCount: snapshot.data.length,
                     itemBuilder: (context, index) {
                       return ProductCard(data[index]);
