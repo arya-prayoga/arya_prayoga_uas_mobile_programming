@@ -34,17 +34,43 @@ class ProductCard extends StatelessWidget {
             },
             child: Column(
               children: [
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 8),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Image.network(
-                      product.thumbnail,
-                      width: double.infinity,
-                      height: 100,
-                      fit: BoxFit.cover,
+                Stack(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 8),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image.network(
+                          product.thumbnail,
+                          width: double.infinity,
+                          height: 100,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
-                  ),
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 8),
+                      alignment: Alignment.topRight,
+                      child: Container(
+                        alignment: Alignment.center,
+                        width: 75,
+                        height: 30,
+                        decoration: BoxDecoration(
+                          color: Colors.green,
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(20),
+                            topRight: Radius.circular(20),
+                          ),
+                        ),
+                        child: Text.rich(
+                          TextSpan(
+                            text: '- ${product.discountPercentage} %',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
                 Container(
                   padding: EdgeInsets.only(top: 16),
@@ -59,7 +85,7 @@ class ProductCard extends StatelessWidget {
                         ),
                       ),
                       Text.rich(
-                        TextSpan(text: '\$${product.price}'),
+                        TextSpan(text: '\$ ${product.price}'),
                       ),
                     ],
                   ),
