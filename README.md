@@ -1,16 +1,12 @@
 # arya_prayoga_uas_mobile_programming
 
-A new Flutter project.
+Nama : Arya Prayoga
+NPM  : 19.0504.0002
 
-## Getting Started
+## Hasil UI
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![WelcomePage](assets/images/Screenshot%202022-07-06%20001038.png)
+![LoginPage](assets/images/Screenshot%202022-07-06%20001103.png)
+![RegisterPage](assets/images/Screenshot%202022-07-06%20001116.png)
+![MainPage](assets/images/Screenshot%202022-07-06%20001414.png)
+![DetailPage](assets/images/Screenshot%202022-07-06%20001525.png)
