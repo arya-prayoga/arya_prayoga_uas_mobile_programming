@@ -1,9 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:arya_prayoga_uas_mobile_programming/pages/login_page.dart';
-import 'package:arya_prayoga_uas_mobile_programming/pages/main_page.dart';
-import 'package:arya_prayoga_uas_mobile_programming/pages/register_page.dart';
 import 'package:arya_prayoga_uas_mobile_programming/style.dart';
+import 'package:arya_prayoga_uas_mobile_programming/widgets/elevated_button.dart';
+import 'package:arya_prayoga_uas_mobile_programming/widgets/text_button.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -23,76 +22,26 @@ class WelcomePage extends StatelessWidget {
           SizedBox(
             height: 25,
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 16,
-              vertical: 8,
-            ),
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.black,
-                minimumSize: Size.fromHeight(50),
-                side: BorderSide(color: Colors.black),
-              ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return LoginPage();
-                    },
-                  ),
-                );
-              },
-              child: Text(
-                'Login',
-                style: whiteTextStyle,
-              ),
-            ),
+          MyElevatedButton(
+            text: 'Login',
+            textStyle: whiteTextStyle,
+            color: Colors.black,
+            isPush: true,
+            moveToLoginPage: true,
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 16,
-              vertical: 8,
-            ),
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.white,
-                minimumSize: Size.fromHeight(50),
-                side: BorderSide(color: Colors.black),
-              ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return RegisterPage();
-                    },
-                  ),
-                );
-              },
-              child: Text(
-                'Register',
-                style: blackTextStyle,
-              ),
-            ),
+          MyElevatedButton(
+            text: 'Register',
+            textStyle: blackTextStyle,
+            color: Colors.white,
+            isPush: true,
+            moveToRegisterPage: true,
           ),
-          TextButton(
-            onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return MainPage();
-                  },
-                ),
-              );
-            },
-            child: Text(
-              'Continue as a guest',
-              style: blueTextStyle,
-            ),
-          ),
+          MyTextButton(
+            text: 'Continue as a guest',
+            textStyle: blueTextStyle,
+            isPushReplacement: true,
+            moveToMainPage: true,
+          )
         ],
       ),
     );

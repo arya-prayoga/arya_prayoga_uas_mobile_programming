@@ -1,9 +1,12 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:arya_prayoga_uas_mobile_programming/pages/main_page.dart';
-import 'package:arya_prayoga_uas_mobile_programming/pages/register_page.dart';
 import 'package:arya_prayoga_uas_mobile_programming/style.dart';
 import 'package:arya_prayoga_uas_mobile_programming/widgets/back_button.dart';
+import 'package:arya_prayoga_uas_mobile_programming/widgets/divider.dart';
+import 'package:arya_prayoga_uas_mobile_programming/widgets/elevated_button.dart';
+import 'package:arya_prayoga_uas_mobile_programming/widgets/sosial_media_button.dart';
+import 'package:arya_prayoga_uas_mobile_programming/widgets/text_button.dart';
+import 'package:arya_prayoga_uas_mobile_programming/widgets/text_field.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -28,150 +31,31 @@ class LoginPage extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              child: TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Username',
-                ),
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              child: TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Password',
-                  suffixIcon: Icon(Icons.visibility),
-                ),
-              ),
-            ),
+            MyTextField(text: 'Username'),
+            MyTextField(text: 'Password', icon: Icons.visibility),
             Container(
               alignment: Alignment.centerRight,
               padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              child: Text(
-                'Forgot Password?',
-                style: regularTextStyle,
-              ),
+              child: Text('Forgot Password?', style: regularTextStyle),
             ),
             SizedBox(
               height: 15,
             ),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.black,
-                  minimumSize: Size.fromHeight(50),
-                  side: BorderSide(color: Colors.black),
-                ),
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return MainPage();
-                      },
-                    ),
-                  );
-                },
-                child: Text(
-                  'Login',
-                  style: whiteTextStyle,
-                ),
-              ),
+            MyElevatedButton(
+              text: 'Login',
+              textStyle: whiteTextStyle,
+              color: Colors.black,
+              isPushReplacement: true,
+              moveToMainPage: true,
             ),
             SizedBox(
               height: 15,
             ),
-            Row(
-              children: <Widget>[
-                Expanded(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                    child: Divider(
-                      color: Colors.black,
-                      thickness: 1,
-                    ),
-                  ),
-                ),
-                Text(
-                  'Or Login with',
-                  style: regularTextStyle,
-                ),
-                Expanded(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                    child: Divider(
-                      color: Colors.black,
-                      thickness: 1,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            MyDivider(text: 'Or Login with'),
             SizedBox(
               height: 15,
             ),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.white,
-                          minimumSize: const Size.fromHeight(50),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
-                            side: BorderSide(color: Colors.grey),
-                          ),
-                        ),
-                        onPressed: () {},
-                        child: Image.asset('assets/images/facebook_logo.png'),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.white,
-                          minimumSize: const Size.fromHeight(50),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
-                            side: BorderSide(color: Colors.grey),
-                          ),
-                        ),
-                        onPressed: () {},
-                        child: Image.asset('assets/images/google_logo.png'),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.white,
-                          minimumSize: const Size.fromHeight(50),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
-                            side: BorderSide(color: Colors.grey),
-                          ),
-                        ),
-                        onPressed: () {},
-                        child: Image.asset('assets/images/apple_logo.png'),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            MySosialMediaButton(),
             Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -180,22 +64,12 @@ class LoginPage extends StatelessWidget {
                   "Don't have an account?",
                   style: regularTextStyle,
                 ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return RegisterPage();
-                        },
-                      ),
-                    );
-                  },
-                  child: Text(
-                    'Register Now',
-                    style: linkTextStyle,
-                  ),
-                ),
+                MyTextButton(
+                  text: 'Register Now',
+                  textStyle: linkTextStyle,
+                  isPush: true,
+                  moveToRegisterPage: true,
+                )
               ],
             ),
             SizedBox(
